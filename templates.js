@@ -19,6 +19,6 @@ templates.foeStats =
 ].join("");
 
 templates.userSprites =
-["<img src ='<%= activeUserSprite %>'>"].join("");
+["<img src ='<%= activeUserSprite %>' class='center-block'>"].join("");
 templates.foeSprites =
-["<div class='character2'><img src ='<%= activeFoeSprite %>'></div>"].join("");
+["<img src ='<%= activeFoeSprite %>' class='center-block'>"].join("");

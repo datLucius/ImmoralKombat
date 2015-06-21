@@ -53,5 +53,5 @@ var hennessy = new Shot({type: "Hennessy", alcohol: 8});
 var bill = new Character({name: "Bill"});
 var ted = new Character({name: "Ted", nausea: 0});
 
-var shotsArray = [vodka, rum, jager, fireball, moonshine, sake];
+var shotsArray = [vodka, rum, jager, fireball, moonshine, sake, baileys, goldschlager, jackdaniels, sloegin, tequila, everclear, hennessy];
 var randomShot = shotsArray[Math.floor(Math.random() * shotsArray.length)];
