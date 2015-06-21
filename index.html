@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<ul class="gameBox">
+  <ul class="titleBox">
+    <li class="titleKombat">IMMORAL COMBAT</li>
+    <li class="start">start</li>
+    <li class="instructions"><span class="border">space</span> - take a shot</li>
+    <li class="instructions"><span class="border">n</span> - eat peanuts</li>
+  </ul>
+  <div class="runningGame hide">
+  <ul class="topInfo">
+    <ul class="stats userInfo">
+      <!-- append user info template here --->
+    </ul>
+    <li class="countDown">
+      <!-- append timer here --->
+      <div class="start"></div>
+    </li>
+    <ul class="stats foeInfo">
+            <!-- append foe info here--->
+    </ul>
+  </ul>
+  <li class="characters">
+      <div class='character1'></div>
+      <div class='character2'></div>
+  </li>
+  <li class="bar">
+    <div class="nutBowl"></div>
+  </li>
+  </div>
+  <ul class="winnerBox hide">
+    <li class="winTxt">BAD ASS</li>
+    <li class="again">again?</li>
+  </ul>
+  <ul class="loserBox hide">
+    <li class="loseTxt">DISGRACE</li>
+    <li class="again">again?</li>
+  </ul>
+</ul>
+
+<!-- Script -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="templates.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>

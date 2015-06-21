@@ -1,0 +1,200 @@
+* {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Geo', sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #DEDEDF;
+}
+
+.gameBox {
+  width: 700px;
+  height: 700px;
+  margin: 0 auto;
+  background-color: #EF0000;
+}
+
+.titleBox{
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.titleKombat {
+  font-size: 8em;
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+}
+.runningGame {
+  width: 100%;
+  height: 100%;
+}
+.start {
+  border: 8px solid yellow;
+  width: 25%;
+  align-self: flex-end;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 4em;
+  margin-bottom: 50px;
+}
+.start:hover {
+  background-color: yellow;
+  color: black;
+}
+.instructions {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  color: #DEDEDF;
+}
+.border {
+  border: 2px solid white;
+  padding: 1px 10px;
+}
+.topInfo {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+.stats {
+  width: 37%;
+  height: 100%;
+}
+.shotTally {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  color: yellow;
+  font-size: 2em;
+  font-weight: bold;
+}
+.drunkMeter {
+  margin-top: 10px;
+  height: 22%;
+  width: 100%;
+  background-color: green;
+  border: 4px solid yellow;
+}
+.drunkBar {
+  height: 100%;
+  background-color: black;
+  color: white;
+  max-width: 100%;
+}
+.drunkBarFoe {
+  height: 100%;
+  background-color: black;
+  max-width: 100%;
+}
+.beerMeter {
+  height: 22%;
+  width: 100%;
+  background-color: gold;
+}
+.beerBar {
+  width: 67%;
+  height: 100%;
+  background-color: brown;
+}
+.beerBarFoe {
+  width: 69%;
+  height: 100%;
+  background-color: brown;
+}
+.countDown {
+  width: 15%;
+  height: 100%;
+  color: white;
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.characters {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 60%;
+}
+.character1{
+  width: 35%;
+  height: 70%;
+  background-color: black;
+  align-self: flex-end;
+}
+
+.character2{
+  width: 35%;
+  height: 70%;
+  background-color: black;
+  align-self: flex-end;
+}
+.bar {
+  width: 100%;
+  height: 20%;
+  background-color: #5E2000;
+  position: relative;
+}
+.nutBowl {
+  position: absolute;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-left: 35%;
+  width: 27%;
+  height: 70%;
+  background-color: blue;
+}
+.winnerBox {
+  width: 100%;
+  height: 100%;
+  background-color: lime;
+}
+.winTxt {
+  width: 100%;
+  font-size: 15em;
+  color: black;
+  text-align: center;
+}
+.again {
+  color: black;
+  background-color: white;
+  margin-top: 20px;
+  font-size: 5em;
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.6;
+}
+.again:hover {
+  opacity: 1;
+}
+.loserBox {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+.loseTxt {
+  text-align: center;
+  width: 100%;
+  font-size: 10em;
+  color: red;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Kombat",
+  "version": "0.0.0",
+  "authors": [
+    "datLucius <jlnelsonart@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3",
+    "bootstrap": "~3.3.5",
+    "normalize": "~1.0.4",
+    "fontawesome": "~4.3.0",
+    "normalize.css": "~3.0.3"
+  }
+}
