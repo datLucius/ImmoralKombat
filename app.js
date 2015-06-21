@@ -4,6 +4,7 @@ function Character(options) {
   this.nausea = options.nausea || Math.floor(Math.random() * 90);
   this.tolerance = (Math.floor(Math.random() * 4) + 1);
   this.shotTally = 0;
+  this.shot = randomShot;
 
   this.drink = function (Shot) {
     if(this.nausea < 100) {
@@ -36,3 +37,6 @@ var moonshine = new Shot({type: "Moon Shine", alcohol: 20});
 
 var bill = new Character({name: "Bill"});
 var ted = new Character({name: "Ted", nausea: 0});
+
+var shotsArray = [vodka, rum, jager, fireball, moonshine];
+var randomShot = shotsArray[Math.floor(Math.random() * shotsArray.length)];

@@ -1,4 +1,6 @@
 var time = 61;
+var userShot = randomShot;
+var foeShot = randomShot;
 
 $(document).ready (function() {
   page.init();
@@ -25,7 +27,10 @@ $(document).ready (function() {
     },
 
     userDrink: function(){
-        ted.drink(rum);
+        ted.drink(userShot);
+        console.log(userShot);
+        randomShot = shotsArray[Math.floor(Math.random() * shotsArray.length)];
+        userShot = randomShot;
         page.addUserStats();
         // switch sprite to chugging sprite
       },
@@ -73,7 +78,9 @@ $(document).ready (function() {
     ///////////////////////////
 
     foeDrink: function () {
-      bill.drink(rum);
+      bill.drink(foeShot);
+      console.log(foeShot);
+      foeShot = randomShot;
       $('.foeInfo').empty();
        page.loadTemplate("foeStats", bill, $('.foeInfo'));
       // switch sprite to chugging sprite
