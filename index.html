@@ -10,11 +10,13 @@
 <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<ul class="gameBox">
+  <audio src="bitmusic.m4v" autoplay loop></audio> <!-- music from http://ericskiff.com/music/-->
+  <audio src="bitdrink.m4v" class="drinkAudio"></audio>
+<ul class="gameBox center-block">
   <ul class="titleBox">
     <li class="titleKombat">IMMORAL COMBAT</li>
     <li class="start">start</li>
-    <li class="instructions"><span class="border">space</span> - take a shot</li>
+    <li class="instructions"><span class="border">s</span> - take a shot</li>
     <li class="instructions"><span class="border">n</span> - eat peanuts</li>
   </ul>
   <div class="runningGame hide">
@@ -31,8 +33,8 @@
     </ul>
   </ul>
   <li class="characters">
-      <div class='character1'></div>
-      <div class='character2'></div>
+    <div class="character1"></div>
+    <div class="character2"></div>
   </li>
   <li class="bar">
     <div class="nutBowl"></div>

@@ -1,6 +1,8 @@
 var time = 61;
 var userShot = randomShot;
 var foeShot = randomShot;
+var activeUserSprite = userSprite.sitting;
+var activeFoeSprite = foeSprite.sitting;
 
 $(document).ready (function() {
   page.init();
@@ -13,32 +15,52 @@ $(document).ready (function() {
 
     initEvents: function () {
       $('.titleBox').on('click', '.start',      page.initStyling);
-      $('.characters').on('click', '.character1', page.userDrink);
-      $('.bar').on('click', '.nutBowl', page.clickNuts);
-      $('.gameBox').on('click', '.again', page.resets)
+      $('body').keypress(page.clickNuts);
+      $('body').keypress(page.userDrink);
+      $('.gameBox').on('click', '.again', page.resets);
     },
 
     initStyling: function () {
+      var startSnd = new Audio("bitcoin.m4v");
+      startSnd.play();
       $('.titleBox').addClass('hide');
       $('.runningGame').removeClass('hide');
       page.addUserStats();
       page.addFoeStats();
       page.runTime();
+      page.addUserSprites();
+      page.addFoeSprites();
     },
 
-    userDrink: function(){
-        ted.drink(userShot);
+    userDrink: function(event){
+      var drinkSnd = new Audio("bitdrink.m4v");
+      if(event.keyCode === 115)
+        {ted.drink(userShot);
+        drinkSnd.play();
         console.log(userShot);
         randomShot = shotsArray[Math.floor(Math.random() * shotsArray.length)];
         userShot = randomShot;
+        $('.character1').empty();
+        activeUserSprite = userSprite.drinking;
+        page.addUserSprites();
         page.addUserStats();
-        // switch sprite to chugging sprite
-      },
+        page.userDelayToggle();
+      }
+    },
 
-    clickNuts: function () {
+    clickNuts: function(event){
+    var eatSnd = new Audio("biteat.m4v");
+    if(event.keyCode === 110){
+      event.preventDefault();
+      eatSnd.play();
+      console.log("nutz pressed");
         $('.userInfo').empty();
         ted.eatNuts();
         page.loadTemplate("userStats", ted, $('.userInfo'))
+        $('.character1').empty();
+        activeUserSprite = userSprite.sitting;
+        page.addUserSprites();
+        }
     },
 
     soberUp: function () {
@@ -72,6 +94,21 @@ $(document).ready (function() {
         return templates[name];
       },
 
+    addUserSprites: function(userSprite){
+      page.loadTemplate("userSprites", userSprite, $('.character1'))
+    },
+    addFoeSprites: function(foeSprite){
+      page.loadTemplate("foeSprites", foeSprite, $('.character2'))
+    },
+    toggleUserSprite: function(){
+      $('.character1').empty();
+      activeUserSprite = userSprite.sitting;
+      page.addUserSprites();
+      console.log('running toggle');
+  },
+    userDelayToggle: function(){
+      setTimeout('page.toggleUserSprite()', 1000);
+    },
 
     ////////////////////////////
     // FOE FUNCTIONS //////////
@@ -81,17 +118,23 @@ $(document).ready (function() {
       bill.drink(foeShot);
       console.log(foeShot);
       foeShot = randomShot;
+      $('.character2').empty();
+      activeFoeSprite = foeSprite.drinking;
+      page.addFoeSprites();
       $('.foeInfo').empty();
        page.loadTemplate("foeStats", bill, $('.foeInfo'));
+      page.foeDelayToggle();
       // switch sprite to chugging sprite
     },
 
-    /////////////////////////////
-    /// BEER FUNCTIONS /////////
-    ///////////////////////////
-
-    generateShot: function () {
-      //on load, user and foe randomly assigned a shot. Shot title and alchol content are displayed on screen
+    toggleFoeSprite: function(){
+      $('.character2').empty();
+      activeFoeSprite = foeSprite.sitting;
+      page.addFoeSprites();
+      console.log('running toggle');
+  },
+    foeDelayToggle: function(){
+      setTimeout('page.toggleFoeSprite()', 1000);
     },
 
     ///////////////////////////
@@ -150,6 +193,10 @@ $(document).ready (function() {
       bill.shotTally = 0;
       $('.loserBox').addClass('hide');
       $('.winnerBox').addClass('hide');
+      $('.character2').empty();
+      $('.character1').empty();
+      activeFoeSprite = foeSprite.sitting;
+      activeUserSprite = userSprite.sitting;
       page.initStyling();
     }
       // decrease timer value by 1 every second

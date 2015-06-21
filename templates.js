@@ -3,7 +3,7 @@ var templates = {};
 templates.userStats =
 [  "<li class='shotTally'><%=ted.shotTally%> shots</li>",
   "<li class='drunkMeter'>",
-    "<div class='drunkBar' style='width: <%=ted.nausea%>%'></div>",
+    "<div class='drunkBar' style='width: <%=ted.nausea%>%'>DRUNKNESS</div>",
   "</li>",
   "<li class='shotName'><%=userShot.type%></li>"
 ].join("");
@@ -13,11 +13,12 @@ templates.timer =  ["<div class='countDownNumber'><%=time%></div>"].join("")
 templates.foeStats =
 [  "<li class='shotTally'><%=bill.shotTally%> shots</li>",
   "<li class='drunkMeter'>",
-    "<div class='drunkBarFoe' style='width: <%=bill.nausea%>%;'></div>",
+    "<div class='drunkBarFoe' style='width: <%=bill.nausea%>%;'>DRUNKNESS</div>",
   "</li>",
   "<li class='shotName'><%=foeShot.type%></li>"
 ].join("");
 
-// templates.characterSprites =
-// ["<div class='character1 character'><img src ='<%= character1Sprite %>'></div>",
-// "<div class='character2 character'><img src ='<%= character2Sprite %>'></div>"].join("");
+templates.userSprites =
+["<img src ='<%= activeUserSprite %>'>"].join("");
+templates.foeSprites =
+["<div class='character2'><img src ='<%= activeFoeSprite %>'></div>"].join("");
