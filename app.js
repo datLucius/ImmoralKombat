@@ -32,9 +32,10 @@ function Shot(options) {
 function Sprite(options) {
   this.sitting = options.sitting;
   this.drinking = options.drinking;
+  this.eating = options.eating;
 };
 
-var userSprite = new Sprite({sitting: "spriteSitting.png", drinking: "drinkSprite.png"});
+var userSprite = new Sprite({sitting: "spriteSitting.png", drinking: "drinkSprite.png", eating: "userEatSprite.png"});
 var foeSprite = new Sprite({sitting: "foeSittingSprite.png", drinking: "foeDrinkSprite.png"})
 var vodka = new Shot({type: "Vodka", alcohol: 8});
 var rum = new Shot({type: "Rum", alcohol: 7.4});

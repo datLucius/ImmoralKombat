@@ -58,7 +58,8 @@ $(document).ready (function() {
         ted.eatNuts();
         page.loadTemplate("userStats", ted, $('.userInfo'))
         $('.character1').empty();
-        activeUserSprite = userSprite.sitting;
+        activeUserSprite = userSprite.eating;
+        page.userDelayToggle();
         page.addUserSprites();
         }
     },
