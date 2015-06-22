@@ -3,6 +3,7 @@ var userShot = randomShot;
 var foeShot = randomShot;
 var activeUserSprite = userSprite.sitting;
 var activeFoeSprite = foeSprite.sitting;
+var x = 0;
 
 $(document).ready (function() {
   page.init();
@@ -30,6 +31,17 @@ $(document).ready (function() {
       page.runTime();
       page.addUserSprites();
       page.addFoeSprites();
+      page.blinkStartDrinkingText();
+    },
+
+    initStylingRepeat: function () {
+      $('.titleBox').addClass('hide');
+      $('.runningGame').removeClass('hide');
+      page.addUserStats();
+      page.addFoeStats();
+      page.addUserSprites();
+      page.addFoeSprites();
+      page.blinkStartDrinkingText();
     },
 
     userDrink: function(event){
@@ -46,6 +58,21 @@ $(document).ready (function() {
         page.addUserStats();
         page.userDelayToggle();
       }
+    },
+    startDrinkingText: function() {
+      if(x<7){
+        $('.drinkBlink').toggleClass('transparent');
+        x = x +1;
+        setTimeout('page.blinkStartDrinkingText()', 500);
+      }
+    },
+    blinkStartDrinkingText: function() {
+      if(x<7){
+        console.log("blinkstart working")
+        $('.drinkBlink').toggleClass('transparent');
+        x = x +1;
+        setTimeout('page.startDrinkingText()', 500);
+        }
     },
 
     clickNuts: function(event){
@@ -154,10 +181,10 @@ $(document).ready (function() {
     },
 
     blackOutStopGame: function() {
-      if(ted.nausea > 100){
+      if(ted.nausea > 100 && bill.nausea < 100){
         page.userBlackOut();
       }
-      if(bill.nausea > 100){
+      if(bill.nausea > 100 && ted.nausea < 100){
         page.foeBlackOut();
       }
     },
@@ -198,7 +225,8 @@ $(document).ready (function() {
       $('.character1').empty();
       activeFoeSprite = foeSprite.sitting;
       activeUserSprite = userSprite.sitting;
-      page.initStyling();
+      time = 61;
+      page.initStylingRepeat();
     }
       // decrease timer value by 1 every second
       //if timer === 0, and if user beertally is greater than foe beertally display 'winner', else if foe beertally is greater than user beer tally display 'disgraced'. If beertally is equal display 'Tie'
